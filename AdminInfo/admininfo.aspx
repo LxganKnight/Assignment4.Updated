@@ -3,5 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-        ADMIN</p>
+        Hi,<asp:LoginName ID="LoginName1" runat="server" />
+</p>
+<p>
+        &nbsp;</p>
+<p>
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+</p>
 </asp:Content>

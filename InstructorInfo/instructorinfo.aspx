@@ -4,4 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p>
         Instructor</p>
+<p>
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+</p>
 </asp:Content>

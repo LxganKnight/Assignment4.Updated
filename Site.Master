@@ -10,6 +10,10 @@
     <style type="text/css">
         .auto-style1 {
             font-size: small;
+            text-align: right;
+        }
+        .auto-style2 {
+            text-align: center;
         }
     </style>    
 
@@ -19,7 +23,7 @@
         <div class="main-container">
             <header>
                 <!-- Your header content -->
-                <h1>Welcome to Karate School</h1>
+                <h1 class="auto-style2">Mojo Dojo School of Karate</h1>
             </header>
             <div class="content">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -27,7 +31,7 @@
             </div>
             <footer>
                 <!-- Your footer content -->
-                <p class="auto-style1">&copy; 2023 Karate School</p>
+                <p class="auto-style1">© 2023 Logan Knight, Noah Nickman</p>
             </footer>
         </div>
     </form>

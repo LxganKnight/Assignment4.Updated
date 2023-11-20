@@ -3,7 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-    You Succeded</p>
+    Hi,
+    <asp:LoginName ID="LoginName1" runat="server" />
+</p>
+<p>
+    <asp:LoginStatus ID="LoginStatus1" runat="server" />
+</p>
 <p>
     &nbsp;</p>
 </asp:Content>
