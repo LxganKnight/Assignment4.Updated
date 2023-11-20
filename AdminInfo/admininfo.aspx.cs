@@ -11,7 +11,19 @@ namespace Assignment4.Updated.AdminInfo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session.Count != 0)
+            {
+                if (HttpContext.Current.Session["userType"].ToString().Trim() == "Administrator")
+                {
+                    Session.Clear();
+                    Session.RemoveAll();
+                    Session.Abandon();
+                    Session.Abandon();
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("Login.aspx", true);
+                }
 
+            }
         }
     }
 }
