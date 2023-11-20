@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="KSchool">
+  <DataContextMoniker Name="/KSchoolDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f73ada91-5f98-45e0-b4e9-65ff65b8a042" absoluteBounds="1.875, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KSchoolDataContext/Instructor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b465d521-3fd4-473d-bcc2-3d9507d1c0ef" absoluteBounds="1.8899999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db17a401-02ba-4610-a2be-eb550408bf0b" absoluteBounds="7.375, 3, 2, 1.9631982421875">
+      <DataClassMoniker Name="/KSchoolDataContext/Member" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1cd3531-dd0b-4545-8925-d1f08f499b56" absoluteBounds="7.39, 3.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="127ef07f-c277-4565-bc7f-9d92a89bd83c" absoluteBounds="7.375, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/KSchoolDataContext/NetUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93f2d9e1-238c-40fc-b413-131b019e6f55" absoluteBounds="7.39, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.375 : 1.28929768880208); (3.875 : 1.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KSchoolDataContext/NetUser/NetUser_Instructor" />
+      <nodes>
+        <classShapeMoniker Id="127ef07f-c277-4565-bc7f-9d92a89bd83c" />
+        <classShapeMoniker Id="f73ada91-5f98-45e0-b4e9-65ff65b8a042" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.375 : 2.07859537760417); (8.375 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KSchoolDataContext/NetUser/NetUser_Member" />
+      <nodes>
+        <classShapeMoniker Id="127ef07f-c277-4565-bc7f-9d92a89bd83c" />
+        <classShapeMoniker Id="db17a401-02ba-4610-a2be-eb550408bf0b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="075c0395-aba4-4faa-9f0b-a348a6a93a9b" absoluteBounds="1.875, 3, 2, 1.9631982421875">
+      <DataClassMoniker Name="/KSchoolDataContext/Section" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ab6ca81-e9d9-42cc-ac1a-62f53828f0b7" absoluteBounds="1.8899999999999997, 3.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.375 : 2.07859537760417); (7 : 2.45359537760417); (7 : 3.98159912109375); (3.875 : 3.98159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KSchoolDataContext/NetUser/NetUser_Section" />
+      <nodes>
+        <classShapeMoniker Id="127ef07f-c277-4565-bc7f-9d92a89bd83c" />
+        <classShapeMoniker Id="075c0395-aba4-4faa-9f0b-a348a6a93a9b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.375 : 3.42829956054688); (7.08333333333333 : 3.42829956054687 : JumpStart); (6.91666666666667 : 3.42829956054688 : JumpEnd); (3.875 : 3.42829956054688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/KSchoolDataContext/Member/Member_Section" />
+      <nodes>
+        <classShapeMoniker Id="db17a401-02ba-4610-a2be-eb550408bf0b" />
+        <classShapeMoniker Id="075c0395-aba4-4faa-9f0b-a348a6a93a9b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

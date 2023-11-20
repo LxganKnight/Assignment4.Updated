@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Assignment4.Updated.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Karate School</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            font-size: small;
+        }
+    </style>    
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main-container">
+            <header>
+                <!-- Your header content -->
+                <h1>Welcome to Karate School</h1>
+            </header>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <footer>
+                <!-- Your footer content -->
+                <p class="auto-style1">&copy; 2023 Karate School</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
