@@ -78,13 +78,13 @@ namespace Assignment4.Updated.AdminInfo
         protected global::System.Web.UI.WebControls.TextBox TextBox5;
 
         /// <summary>
-        /// Button1 control.
+        /// addMember control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button addMember;
 
         /// <summary>
         /// rMember control.
@@ -150,13 +150,13 @@ namespace Assignment4.Updated.AdminInfo
         protected global::System.Web.UI.WebControls.Button addInstructor;
 
         /// <summary>
-        /// TextBox9 control.
+        /// rInstructor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox rInstructor;
 
         /// <summary>
         /// removeInstructor control.

@@ -9,8 +9,13 @@ namespace Assignment4.Updated.InstructorInfo
 {
     public partial class instructorinfo : System.Web.UI.Page
     {
+        KSchoolDataContext dbcon;
+        string connString = ConfigurationManager.ConnectionStrings["KarateSchool_1_ConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            dbcon = new KSchoolDataContext(connString);
+
+
             if (Session.Count != 0)
             {
                 if (HttpContext.Current.Session["userType"].ToString().Trim() == "Instructor")
@@ -32,12 +37,6 @@ namespace Assignment4.Updated.InstructorInfo
                 Label1.Text = firstname;
                 Label2.Text = lastname;
 
-                /*
-                NetUser myUser = (from x in dbcon.NetUsers
-                                  where x.UserName == HttpContext.Current.Session["username"].ToString()
-                                  && x.UserPassword == HttpContext.Current.Session["password"].ToString()
-                                  select x).First();
-                */
 
                 
 

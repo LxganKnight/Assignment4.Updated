@@ -36,7 +36,7 @@
         <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
     </p>
     <p>
-        <asp:Button ID="Button1" runat="server" Text="Button" />
+        <asp:Button ID="addMember" runat="server" Text="addMember" />
     </p>
     <p>
         Remove Member:</p>
@@ -74,7 +74,7 @@
         Remove Instructor: </p>
     <p>
         Instructor to be Removed&#39;s ID:
-        <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+        <asp:TextBox ID="rInstructor" runat="server"></asp:TextBox>
     </p>
     <p>
         <asp:Button ID="removeInstructor" runat="server" Text="Remove Instructor" />
