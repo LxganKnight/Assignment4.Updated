@@ -82,6 +82,31 @@
     <p>
         &nbsp;</p>
     <p>
+        Create new Member Section:</p>
+    <p>
+        Section Name:
+        <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+    </p>
+    <p>
+        Section Start Date:
+        <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
+    </p>
+    <p>
+        Member_ID:
+        <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
+    </p>
+    <p>
+        Instructor_ID:
+        <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
+    </p>
+    <p>
+        Section Fee:
+        <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
+    </p>
+    <p>
+        <asp:Button ID="newSection" runat="server" Text="Create New Section" />
+    </p>
+    <p>
         &nbsp;</p>
     <p>
         &nbsp;</p>

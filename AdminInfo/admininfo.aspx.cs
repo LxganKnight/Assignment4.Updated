@@ -32,22 +32,25 @@ namespace Assignment4.Updated.AdminInfo
             }
         }
 
+
+
+
         protected void removeMember_Click(object sender, EventArgs e)
         {
             
             int id;
 
             Int32.TryParse(rMember.Text, out id);
-            var result = from x in dbconn.Member
+            var result = from x in dbcon.Member
                          where x.Member_UserID == id
                          select x;
             foreach (var x in result)
             {
-                dbconn.Member.DeleteOnSubmit(x);
+                dbcon.Member.DeleteOnSubmit(x);
             }
             try
             {
-                dbconn.SubmitChanges();
+                dbcon.SubmitChanges();
             }
             catch
             {
@@ -63,16 +66,16 @@ namespace Assignment4.Updated.AdminInfo
             int id;
 
             Int32.TryParse(rInstructor.Text, out id);
-            var result = from x in dbconn.Instructor
+            var result = from x in dbcon.Instructor
                          where x.Instructor == id
                          select x;
             foreach (var x in result)
             {
-                dbconn.Instructor.DeleteOnSubmit(x);
+                dbcon.Instructor.DeleteOnSubmit(x);
             }
             try
             {
-                dbconn.SubmitChanges();
+                dbcon.SubmitChanges();
             }
             catch
             {
@@ -84,28 +87,93 @@ namespace Assignment4.Updated.AdminInfo
 
         protected void addMember_Click(object sender, EventArgs e)
         {
-            string conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Noah Nickman\\Documents\\nickman213\\nickman213a3p2\\App_Data\\AutoRental.mdf\";Integrated Security=True;Connect Timeout=30";
-            dbconn = new DataClasses1DataContext(conn);
-            string mName = TextBox4.Text;
-            int id, cargoSpace;
-            Int32.TryParse(TextBox3.Text, out id);
-            Int32.TryParse(TextBox2.Text, out cargoSpace);
+            string fname = TextBox1.Text;
+            string lname = TextBox2.Text;
+            string date = TextBox3.Text;
+            string pnumber = TextBox4.Text;
+            string email = TextBox5.Text;
+
             Member member = new Member
             {
-                ModelName = mName,
-                AutoTypeID = id,
-                CargoSpace = cargoSpace
+                MemberFirstName = fname,
+                MemberLastName = lname,
+                MemberDateJoined = date,
+                MemberPhoneNumber = pnumber,
+                MemberEmail = email
             };
-            dbconn.Models.InsertOnSubmit(model);
+            dbcon.Member.InsertOnSubmit(member);
             try
             {
-                dbconn.SubmitChanges();
+                dbcon.SubmitChanges();
             }
             catch
             {
 
             }
             GridView1.DataBind();
+        }
+
+        protected void addInstructor_Click(object sender, EventArgs e)
+        {
+            string fname = TextBox1.Text;
+            string lname = TextBox2.Text;
+            string date = TextBox3.Text;
+            string pnumber = TextBox4.Text;
+            string email = TextBox5.Text;
+
+            Member member = new Member
+            {
+                MemberFirstName = fname,
+                MemberLastName = lname,
+                MemberDateJoined = date,
+                MemberPhoneNumber = pnumber,
+                MemberEmail = email
+            };
+            dbcon.Member.InsertOnSubmit(member);
+            try
+            {
+                dbcon.SubmitChanges();
+            }
+            catch
+            {
+
+            }
+            GridView1.DataBind();
+        }
+
+
+
+
+
+
+
+        protected void addSection_Click(object sender, EventArgs e)
+        {
+            
+            string sectionName = TextBox9.Text;
+            string StartDate = TextBox10.Text;
+            int member_id, instructor_id, sectionfee;
+            Int32.TryParse(TextBox11.Text, out member_id);
+            Int32.TryParse(TextBox12.Text, out instructor_id);
+            Int32.TryParse(TextBox13.Text, out sectionfee);
+
+            Section section = new Section
+            {
+                SectionName = sectionName,
+                SectionStartDate = StartDate,
+                Member_ID = member_id,
+                Instructor_ID = instructor_id,
+                SectionFee = sectionfee
+            };
+            dbcon.Section.InsertOnSubmit(section);
+            try
+            {
+                dbcon.SubmitChanges();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

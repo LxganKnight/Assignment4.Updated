@@ -28,10 +28,10 @@ namespace Assignment4.Updated.InstructorInfo
                     Response.Redirect("Login.aspx", true);
                 }
 
-                string firstname = (from x in dbcon.InstructorID
+                string firstname = (from x in dbcon.Instructors
                                     where x.InstructorID == HttpContext.Current.Session["userID"].ToString()
                                     select x.InstructorFirstName);
-                string lastname = (from x in dbcon.InstructorID
+                string lastname = (from x in dbcon.Instructors
                                     where x.InstructorID == HttpContext.Current.Session["userID"].ToString()
                                     select x.InstructorLastName);
                 Label1.Text = firstname;
