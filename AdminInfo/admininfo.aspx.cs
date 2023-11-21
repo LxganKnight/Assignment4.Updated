@@ -10,7 +10,7 @@ namespace Assignment4.Updated.AdminInfo
     public partial class admininfo : System.Web.UI.Page
     {
         KSchoolDataContext dbcon;
-        string connString = ConfigurationManager.ConnectionStrings["KarateSchool_1_ConnectionString"].ConnectionString;
+        string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Noah Nickman\\source\\repos\\Assignment4Updated\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace Assignment4.Updated.AdminInfo
                     Session.RemoveAll();
                     Session.Abandon();
                     Session.Abandon();
-                    FormsAuthentication.SignOut();
+                    System.Web.Security.FormsAuthentication.SignOut();
                     Response.Redirect("Login.aspx", true);
                 }
 
@@ -41,12 +41,12 @@ namespace Assignment4.Updated.AdminInfo
             int id;
 
             Int32.TryParse(rMember.Text, out id);
-            var result = from x in dbcon.Member
+            var result = from x in dbcon.Members
                          where x.Member_UserID == id
                          select x;
             foreach (var x in result)
             {
-                dbcon.Member.DeleteOnSubmit(x);
+                dbcon.Members.DeleteOnSubmit(x);
             }
             try
             {
@@ -66,12 +66,12 @@ namespace Assignment4.Updated.AdminInfo
             int id;
 
             Int32.TryParse(rInstructor.Text, out id);
-            var result = from x in dbcon.Instructor
-                         where x.Instructor == id
+            var result = from x in dbcon.Instructors
+                         where x.InstructorID == id
                          select x;
             foreach (var x in result)
             {
-                dbcon.Instructor.DeleteOnSubmit(x);
+                dbcon.Instructors.DeleteOnSubmit(x);
             }
             try
             {
@@ -101,7 +101,7 @@ namespace Assignment4.Updated.AdminInfo
                 MemberPhoneNumber = pnumber,
                 MemberEmail = email
             };
-            dbcon.Member.InsertOnSubmit(member);
+            dbcon.Members.InsertOnSubmit(member);
             try
             {
                 dbcon.SubmitChanges();
@@ -115,21 +115,17 @@ namespace Assignment4.Updated.AdminInfo
 
         protected void addInstructor_Click(object sender, EventArgs e)
         {
-            string fname = TextBox1.Text;
-            string lname = TextBox2.Text;
-            string date = TextBox3.Text;
-            string pnumber = TextBox4.Text;
-            string email = TextBox5.Text;
+            string fname = TextBox6.Text;
+            string lname = TextBox7.Text;
+            string pnumber = TextBox8.Text;
 
-            Member member = new Member
+            Instructor instructor = new Instructor
             {
-                MemberFirstName = fname,
-                MemberLastName = lname,
-                MemberDateJoined = date,
-                MemberPhoneNumber = pnumber,
-                MemberEmail = email
+                InstructorFirstName = fname,
+                InstructorLastName = lname,
+                InstructorPhoneNumber = pnumber
             };
-            dbcon.Member.InsertOnSubmit(member);
+            dbcon.Instructors.InsertOnSubmit(instructor);
             try
             {
                 dbcon.SubmitChanges();
@@ -165,7 +161,7 @@ namespace Assignment4.Updated.AdminInfo
                 Instructor_ID = instructor_id,
                 SectionFee = sectionfee
             };
-            dbcon.Section.InsertOnSubmit(section);
+            dbcon.Sections.InsertOnSubmit(section);
             try
             {
                 dbcon.SubmitChanges();
