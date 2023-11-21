@@ -41,7 +41,7 @@ namespace Assignment4.Updated.AdminInfo
         {
             KSchoolDataContext dbcon = new KSchoolDataContext(connString);
             int id;
-
+            //finding member with selected id and removing them
             Int32.TryParse(rMember.Text, out id);
             var result = from x in dbcon.Members
                          where x.Member_UserID == id
@@ -66,7 +66,7 @@ namespace Assignment4.Updated.AdminInfo
         {
 
             int id;
-
+            //finding instructor with selected id and removing them
             Int32.TryParse(rInstructor.Text, out id);
             var result = from x in dbcon.Instructors
                          where x.InstructorID == id
@@ -94,7 +94,7 @@ namespace Assignment4.Updated.AdminInfo
             string date = TextBox3.Text;
             string pnumber = TextBox4.Text;
             string email = TextBox5.Text;
-
+            //creating member to be added
             Member member = new Member
             {
                 MemberFirstName = fname,
@@ -104,6 +104,7 @@ namespace Assignment4.Updated.AdminInfo
                 MemberEmail = email
             };
             dbcon.Members.InsertOnSubmit(member);
+            //trying to add member
             try
             {
                 dbcon.SubmitChanges();
@@ -120,7 +121,7 @@ namespace Assignment4.Updated.AdminInfo
             string fname = TextBox6.Text;
             string lname = TextBox7.Text;
             string pnumber = TextBox8.Text;
-
+            //creating instructor to be added
             Instructor instructor = new Instructor
             {
                 InstructorFirstName = fname,
@@ -154,7 +155,7 @@ namespace Assignment4.Updated.AdminInfo
             Int32.TryParse(TextBox11.Text, out member_id);
             Int32.TryParse(TextBox12.Text, out instructor_id);
             Int32.TryParse(TextBox13.Text, out sectionfee);
-
+            //creating section to be added
             Section section = new Section
             {
                 SectionName = sectionName,
@@ -164,6 +165,7 @@ namespace Assignment4.Updated.AdminInfo
                 SectionFee = sectionfee
             };
             dbcon.Sections.InsertOnSubmit(section);
+            //trying to add section
             try
             {
                 dbcon.SubmitChanges();

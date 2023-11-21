@@ -26,7 +26,7 @@ namespace Assignment4.Updated
             string username = Login1.UserName;
             string password = Login1.Password;      
 
-
+            //taking username and password from the login menu
 
             HttpContext.Current.Session["username"] = username;
             HttpContext.Current.Session["password"] = password;
@@ -44,6 +44,7 @@ namespace Assignment4.Updated
                 HttpContext.Current.Session["userType"] = myUser.UserType;
 
             }
+            //if & else if statements to take the user to their page
             if (myUser != null && HttpContext.Current.Session["userType"].ToString().Trim() == "Member")
             {
 

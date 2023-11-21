@@ -30,6 +30,8 @@ namespace Assignment4.Updated.InstructorInfo
                     System.Web.Security.FormsAuthentication.SignOut();
                     Response.Redirect("Login.aspx", true);
                 }
+
+                //taking the user's id and gettingnames
                 int id;
                 Int32.TryParse(HttpContext.Current.Session["userID"].ToString(), out id);
 
@@ -40,6 +42,8 @@ namespace Assignment4.Updated.InstructorInfo
                 Label1.Text = instructor.InstructorFirstName;
                 Label2.Text = instructor.InstructorLastName;
 
+
+                //filling table with isntructors sections
                 var result = from section in dbcon.Sections
                              join member in dbcon.Members
                              on section.Member_ID equals member.Member_UserID
