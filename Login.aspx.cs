@@ -33,7 +33,7 @@ namespace Assignment4.Updated
             NetUser myUser = (from x in dbcon.NetUsers
                               where x.UserName == HttpContext.Current.Session["username"].ToString()
                               && x.UserPassword == HttpContext.Current.Session["password"].ToString()
-                              select x).FirstorDefault();
+                              select x).FirstOrDefault();
 
 
             if (myUser != null)
