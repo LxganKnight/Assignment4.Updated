@@ -12,7 +12,7 @@ namespace Assignment4.Updated.AdminInfo
     public partial class admininfo : System.Web.UI.Page
     {
         KSchoolDataContext dbcon;
-        string connString = ConfigurationManager.ConnectionStrings["KarateSchool_1_ConnectionString"].ConnectionString;
+        string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Noah Nickman\\source\\repos\\Assignment4Updated\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace Assignment4.Updated.AdminInfo
                     Session.RemoveAll();
                     Session.Abandon();
                     Session.Abandon();
-                    FormsAuthentication.SignOut();
+                    System.Web.Security.FormsAuthentication.SignOut();
                     Response.Redirect("Login.aspx", true);
                 }
 
@@ -117,21 +117,17 @@ namespace Assignment4.Updated.AdminInfo
 
         protected void addInstructor_Click(object sender, EventArgs e)
         {
-            string fname = TextBox1.Text;
-            string lname = TextBox2.Text;
-            string date = TextBox3.Text;
-            string pnumber = TextBox4.Text;
-            string email = TextBox5.Text;
+            string fname = TextBox6.Text;
+            string lname = TextBox7.Text;
+            string pnumber = TextBox8.Text;
 
-            Member member = new Member
+            Instructor instructor = new Instructor
             {
-                MemberFirstName = fname,
-                MemberLastName = lname,
-                MemberDateJoined = DateTime.Now,
-                MemberPhoneNumber = pnumber,
-                MemberEmail = email
+                InstructorFirstName = fname,
+                InstructorLastName = lname,
+                InstructorPhoneNumber = pnumber
             };
-            dbcon.Members.InsertOnSubmit(member);
+            dbcon.Instructors.InsertOnSubmit(instructor);
             try
             {
                 dbcon.SubmitChanges();

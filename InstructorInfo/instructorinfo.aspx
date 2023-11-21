@@ -5,14 +5,13 @@
     <p>
         Welcome
         <asp:Label ID="Label1" runat="server" Text="Firstname"></asp:Label>
-        ,
-        <asp:Label ID="Label2" runat="server" Text="Lastname"></asp:Label>
+        ,<asp:Label ID="Label2" runat="server" Text="Lastname"></asp:Label>
         !</p>
 <p>
         <asp:LoginStatus ID="LoginStatus1" runat="server" />
 </p>
     <p>
-        Your Members:</p>
+        Your Sections:</p>
     <p>
         <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
