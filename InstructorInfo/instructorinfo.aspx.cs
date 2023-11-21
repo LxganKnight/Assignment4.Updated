@@ -12,7 +12,7 @@ namespace Assignment4.Updated.InstructorInfo
     public partial class instructorinfo : System.Web.UI.Page
     {
         KSchoolDataContext dbcon;
-        string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Noah Nickman\\source\\repos\\Assignment4Updated\\App_Data\\KarateSchool(1).mdf\";Integrated Security=True;Connect Timeout=30";
+        string connString = ConfigurationManager.ConnectionStrings["KarateSchool_1_ConnectionString"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
