@@ -25,7 +25,7 @@ namespace Assignment4.Updated.MemberInfo
                 var myMember = dbcon.Members.FirstOrDefault(m => m.Member_UserID == (int)Session["UserID"]);
                 try
                 {
-                lblMemberName.Text = myMember.MemberFirstName + " " + myMember.MemberLastName;
+                label1.Text = myMember.MemberFirstName + " " + myMember.MemberLastName;
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace Assignment4.Updated.MemberInfo
                           };
 
             decimal totalPayments = records.Sum(section => section.SectionFee);
-            lblTotalCost.Text = totalPayments.ToString("c");
+            label2.Text = totalPayments.ToString("c");
 
 
             GridView1.DataSource = records;

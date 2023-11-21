@@ -15,13 +15,13 @@ namespace Assignment4.Updated.MemberInfo
     {
 
         /// <summary>
-        /// lblMemberName control.
+        /// label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMemberName;
+        protected global::System.Web.UI.WebControls.Label label1;
 
         /// <summary>
         /// GridView1 control.
@@ -33,13 +33,13 @@ namespace Assignment4.Updated.MemberInfo
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// lblTotalCost control.
+        /// label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalCost;
+        protected global::System.Web.UI.WebControls.Label label2;
 
         /// <summary>
         /// LoginStatus1 control.

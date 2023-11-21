@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
             <div>
                 <p>Name:
-                    <asp:Label ID="lblMemberName" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="label1" runat="server" Text="Label"></asp:Label>
                 </p>
             </div>
     <p>
@@ -12,7 +12,7 @@
         </asp:GridView>
 </p>
     <p>
-        Total Cost:<asp:Label ID="lblTotalCost" runat="server" Text="Label"></asp:Label>
+        Total Cost:<asp:Label ID="label2" runat="server" Text="Label"></asp:Label>
 </p>
 <p>
     <asp:LoginStatus ID="LoginStatus1" runat="server" />
