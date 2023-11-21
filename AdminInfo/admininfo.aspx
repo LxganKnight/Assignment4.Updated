@@ -3,16 +3,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p>
-        Hi,<asp:LoginName ID="LoginName1" runat="server" />
-</p>
-<p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
         Members:</p>
-    <asp:GridView ID="GridView1" runat="server">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+        <Columns>
+            <asp:BoundField DataField="MemberFirstName" HeaderText="MemberFirstName" SortExpression="MemberFirstName" />
+            <asp:BoundField DataField="MemberLastName" HeaderText="MemberLastName" SortExpression="MemberLastName" />
+            <asp:BoundField DataField="MemberDateJoined" HeaderText="MemberDateJoined" SortExpression="MemberDateJoined" />
+            <asp:BoundField DataField="MemberPhoneNumber" HeaderText="MemberPhoneNumber" SortExpression="MemberPhoneNumber" />
+        </Columns>
     </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:KarateSchool_1_ConnectionString3 %>" SelectCommand="SELECT [MemberFirstName], [MemberLastName], [MemberDateJoined], [MemberPhoneNumber] FROM [Member]"></asp:SqlDataSource>
     <p>
         Add a new Member:</p>
     <p>
@@ -51,8 +51,13 @@
         &nbsp;</p>
     <p>
         Instructors:</p>
-    <asp:GridView ID="GridView2" runat="server">
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
+        <Columns>
+            <asp:BoundField DataField="InstructorFirstName" HeaderText="InstructorFirstName" SortExpression="InstructorFirstName" />
+            <asp:BoundField DataField="InstructorLastName" HeaderText="InstructorLastName" SortExpression="InstructorLastName" />
+        </Columns>
     </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:KarateSchool_1_ConnectionString3 %>" SelectCommand="SELECT [InstructorFirstName], [InstructorLastName] FROM [Instructor]"></asp:SqlDataSource>
     <p>
         Add a new Instructor:</p>
     <p>
@@ -106,14 +111,6 @@
     <p>
         <asp:Button ID="newSection" runat="server" Text="Create New Section" />
     </p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
     <p>
         &nbsp;</p>
     <p>

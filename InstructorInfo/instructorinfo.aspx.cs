@@ -33,25 +33,28 @@ namespace Assignment4.Updated.InstructorInfo
                 int id;
                 Int32.TryParse(HttpContext.Current.Session["userID"].ToString(), out id);
 
-                string firstname = (from x in dbcon.Instructors
-                                    where x.InstructorID == id
-                                    select x.InstructorFirstName).ToString();
-                string lastname = (from x in dbcon.Instructors
-                                    where x.InstructorID == id
-                                    select x.InstructorLastName).ToString();
-                Label1.Text = firstname;
-                Label2.Text = lastname;
+                Instructor instructor = (from x in dbcon.Instructors
+                                         where x.InstructorID == id
+                                         select x).FirstOrDefault();
 
+                Label1.Text = instructor.InstructorFirstName;
+                Label2.Text = instructor.InstructorLastName;
 
-                
-
+                var result = from section in dbcon.Sections
+                             join member in dbcon.Members
+                             on section.Member_ID equals member.Member_UserID
+                             where section.Instructor_ID == id
+                             select new
+                             {
+                                 Section_Name = section.SectionName,
+                                 First_Name = member.MemberFirstName,
+                                 Last_Name = member.MemberLastName
+                             };
+                GridView1.DataSource = result;
+                GridView1.DataBind();
 
             }
         }
 
-        protected System.Void Page_Load(System.Object sender, System.EventArgs e)
-        {
-
-        }
     }
 }
