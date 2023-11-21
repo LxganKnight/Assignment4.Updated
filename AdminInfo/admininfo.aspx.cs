@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -19,7 +21,7 @@ namespace Assignment4.Updated.AdminInfo
 
             if (Session.Count != 0)
             {
-                if (HttpContext.Current.Session["userType"].ToString().Trim() == "Administrator")
+                if (HttpContext.Current.Session["userType"].ToString().Trim() != "Administrator")
                 {
                     Session.Clear();
                     Session.RemoveAll();
@@ -37,7 +39,7 @@ namespace Assignment4.Updated.AdminInfo
 
         protected void removeMember_Click(object sender, EventArgs e)
         {
-            
+            KSchoolDataContext dbcon = new KSchoolDataContext(connString);
             int id;
 
             Int32.TryParse(rMember.Text, out id);
@@ -97,7 +99,7 @@ namespace Assignment4.Updated.AdminInfo
             {
                 MemberFirstName = fname,
                 MemberLastName = lname,
-                MemberDateJoined = date,
+                MemberDateJoined = DateTime.Now,
                 MemberPhoneNumber = pnumber,
                 MemberEmail = email
             };
@@ -156,7 +158,7 @@ namespace Assignment4.Updated.AdminInfo
             Section section = new Section
             {
                 SectionName = sectionName,
-                SectionStartDate = StartDate,
+                SectionStartDate = DateTime.Now,
                 Member_ID = member_id,
                 Instructor_ID = instructor_id,
                 SectionFee = sectionfee
